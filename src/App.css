@@ -1,0 +1,285 @@
+@keyframes glowing {
+  0% {
+    background-color: #808080;
+    box-shadow: 0 0 5px #808080;
+  }
+  50% {
+    background-color: #404040;
+    box-shadow: 0 0 20px #404040;
+  }
+  100% {
+    background-color: #000;
+    box-shadow: 0 0 5px #000;
+  }
+}
+:root {
+  /* --neon-text-color: maroon; */
+  --neon-border-color: maroon;
+}
+
+@keyframes flicker {
+    
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    
+      /* text-shadow:
+          -0.2rem -0.2rem 1rem #fff,
+          0.2rem 0.2rem 1rem #fff,
+          0 0 2rem var(--neon-text-color),
+          0 0 4rem var(--neon-text-color),
+          0 0 6rem var(--neon-text-color),
+          0 0 8rem var(--neon-text-color),
+          0 0 10rem var(--neon-text-color); */
+      
+      box-shadow:
+          0 0 .5rem #fff,
+          inset 0 0 .5rem #fff,
+          0 0 2rem var(--neon-border-color),
+          inset 0 0 2rem var(--neon-border-color),
+          0 0 4rem var(--neon-border-color),
+          inset 0 0 4rem var(--neon-border-color);        
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+@keyframes neonBlack {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000000,
+      0 0 70px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 150px #000000;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #000000,
+      0 0 35px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 75px #000000;
+  }
+}
+@keyframes neonWhite {
+  from {
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #fff,
+      0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #fff,
+      0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+  }
+}
+
+#toPlatform, #toHogwarts, #mapSwear{
+  display: block;
+}
+#toPlatform p,#toPlatform button, #toHogwarts a, #mapSwear button, .categories button, #triwizard button{
+  font-size: 25px;
+}
+#hogwartsExpress{
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+#platformVid{
+  width: 100vw;
+}
+#toPlatform button, #toHogwarts a, #triwizard button{
+  animation: glowing 1300ms infinite;
+  border: none
+}
+#toPlatform .modal-content, #toHogwarts .modal-content{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+header{
+  width: 100%;
+  text-align: center;
+}
+#logo{
+  width: 10%;
+  margin: 25px 0;
+  animation: float 6s ease-in-out infinite;;
+  transform: translatey(0px);
+} 
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px solid black;
+  padding: 15px 0;
+  margin: 0 0 25px 0;
+}
+.menu{
+  color: black;
+  text-decoration: none;
+  padding: 10px 5px;
+  animation: neonBlack 1.5s ease-in-out infinite alternate;
+}
+.menu:hover{
+  color: white;
+  text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #fff,
+      0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+  animation: none;
+}
+.activePage{
+  color: white;
+  text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #fff,
+      0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+}
+#hogwarts h1{
+  font-size: 50px;
+  animation: neonBlack 1.5s ease-in-out infinite alternate,float 6s ease-in-out infinite;
+  transform: translatey(0px);
+  font-size: 50px;
+  color: black;
+}
+#hogwarts{
+  text-align: center;
+  padding: 100px 0;
+}
+
+#staff{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  color: white;
+  text-shadow: black 1px 0 10px;;
+}
+.btn3d{
+  color:white;
+  box-shadow: white 0 0 20px;
+  background-color: #000;
+  border-radius: 25px;
+  padding: 0 25px;
+}
+.btn3d:hover{
+  text-shadow: white 0 0 10px;
+}
+#staff article, #students article{
+  display: flex;
+  justify-content: center;
+}
+
+#points{
+  margin-top: 250px;
+}
+.progress{
+  transform: rotate(-90deg);
+  width: 500px;
+  border: 1px solid black;
+  height: 100px;
+  position: absolute;
+}
+#crest{
+  padding-top: 315px;
+  display: flex;
+  justify-content: space-around;
+}
+#crest img{
+  width: 100px;
+}
+#setPoint {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+#setPoint div{
+  display: flex;
+  justify-content: center;
+}
+#setPoint button{
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+#setPoint p{
+  padding: 0 5px;
+  text-shadow: white 0 0 5px;
+}
+#sorting{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#hat{
+  width: 50vw;
+  height: 50vh;
+  background-image: url('./img/Sorting_Hat.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+.gryffindor{
+  box-shadow: 0px 0px 40px 20px maroon;
+}
+.slytherin{
+  box-shadow: 0px 0px 40px 20px darkgreen;
+}
+.ravenclaw{
+  box-shadow: 0px 0px 40px 20px navy;
+}
+.hufflepuff{
+  box-shadow: 0px 0px 40px 20px gold;
+}
+
+#initial p, #triwizard > p, #sorting p{
+  color: black;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #000000,
+      0 0 35px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 75px #000000;
+}
+#sorting > p, #triwizard > p{
+  color:white;
+  text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #fff,
+      0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+}
+#flame{
+  color: white;
+  height: 75vh;
+  background-image: url('./img/goblet.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#flame p{
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  text-shadow: black 1px 0 10px;
+}
+#flame h1{
+  animation: neonWhite 1.5s ease-in-out infinite alternate;
+}
+#maraudersMap{
+  text-align: center;
+}
+
+#maraudersMap #fullMap{
+  width: 95vw;
+}
+#mapSwear button, #maraudersMap #managedBtn {
+  background-color: white;
+  font-size: 25px;
+  /* font-weight: 200; */
+  color: maroon;
+  padding: 1rem 2rem;
+  border: 3px solid maroon;
+  border-radius: 2rem;
+  animation: flicker 1.5s infinite alternate;     
+}
+#mapSwear .modal-content{
+  border: none;
+  background-color: transparent;
+}
